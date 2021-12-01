@@ -1,4 +1,3 @@
-formatVersion: 1
 # This blueprint will deploy a linux machine and install Tomcat on it. You can deploy to AWS or vSphere. Once the machine is deployed copy/paste the IP address into a browser to see the tomcat landing page.
 formatVersion: 1
 name: Ansible-Tomcat-Do-NOT-Modify
