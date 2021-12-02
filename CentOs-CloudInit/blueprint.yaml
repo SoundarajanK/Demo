@@ -10,6 +10,10 @@ inputs:
     title: password for the system administrator
     encrypted: true
     default: VMware1!
+  
+  hostname1:
+    type: string
+    title: Enter the hostname
 resources:
   CentOs:
     type: Cloud.Machine
@@ -26,7 +30,14 @@ resources:
         - network: '${resource.Cloud_Network_1.id}'
           assignment: static
       cloudConfig: |
+        users:
+          - name: ${input.user}
+            sudo: ['ALL=(ALL) NOPASSWD:ALL']
+            groups: sudo
+            shell: /bin/bash
+            
         runcmd:
+          - hostnamectl set-hostname ${input.hostname1}
           - USER=${input.user}
           - PASS=${input.pass}
           - echo $USER:$PASS | /usr/sbin/chpasswd
