@@ -1,6 +1,6 @@
 formatVersion: 1
 name: CentOs-CloudInit-user-creation
-version: 1
+version: 2
 inputs: 
   user:
     type: string
