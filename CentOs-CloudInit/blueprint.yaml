@@ -1,0 +1,40 @@
+formatVersion: 1
+name: CentOs-CloudInit-user-creation
+version: 1
+inputs: 
+  user:
+    type: string
+    title: User name for the system administrator account
+  pass:
+    type: string
+    title: password for the system administrator
+    encrypted: true
+    default: VMware1!
+resources:
+  CentOs:
+    type: Cloud.Machine
+    properties:
+      constraints:
+        - tag: 'env:compute'
+      image: CentOs
+      flavor: Medium
+      customizationSpec: Linux-cust
+      storage:
+        constraints:
+          - tag: 'tier:compute'
+      networks:
+        - network: '${resource.Cloud_Network_1.id}'
+          assignment: static
+      cloudConfig: |
+        runcmd:
+          - USER=${input.user}
+          - PASS=${input.pass}
+          - echo $USER:$PASS | /usr/sbin/chpasswd
+          - sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
+          
+  Cloud_Network_1:
+    type: Cloud.Network
+    properties:
+      networkType: existing
+      constraints:
+        - tag: 'env:compute'
