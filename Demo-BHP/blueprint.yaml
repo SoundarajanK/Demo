@@ -1,0 +1,25 @@
+formatVersion: 1
+name: DEMO-BHP
+version: 1
+inputs: {}
+resources:
+  CentOs:
+    type: Cloud.Machine
+    properties:
+      constraints:
+        - tag: 'env:compute'
+      image: CentOs
+      flavor: Medium
+      customizationSpec: Linux-cust
+      storage:
+        constraints:
+          - tag: 'tier:compute'
+      networks:
+        - network: '${resource.Cloud_Network_1.id}'
+          assignment: static
+  Cloud_Network_1:
+    type: Cloud.Network
+    properties:
+      networkType: existing
+      constraints:
+        - tag: 'env:compute'
