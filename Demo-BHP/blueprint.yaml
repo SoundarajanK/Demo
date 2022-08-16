@@ -1,6 +1,6 @@
 formatVersion: 1
 name: DEMO-BHP
-version: 1
+version: 2
 inputs: {}
 resources:
   CentOs:
@@ -8,7 +8,7 @@ resources:
     properties:
       constraints:
         - tag: 'env:compute'
-      image: CentOs
+      image: centOS-CloudInit
       flavor: Medium
       customizationSpec: Linux-cust
       storage:
