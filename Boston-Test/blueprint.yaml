@@ -3,7 +3,7 @@ name: DEMO-Boston
 version: 2
 inputs: {}
 resources:
-  CentOs:
+  CentOs-New:
     type: Cloud.Machine
     properties:
       constraints:
