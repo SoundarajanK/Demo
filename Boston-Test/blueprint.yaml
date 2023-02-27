@@ -1,4 +1,6 @@
 formatVersion: 1
+name: DEMO-Boston
+version: 1
 inputs: {}
 resources:
   CentOs:
