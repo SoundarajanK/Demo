@@ -4,7 +4,7 @@ exports.handler = function handler(context, inputs) {
   let outputs = {};
   outputs.tags = inputs.tags;
   
-  console.log("Entering ABX action");
+  console.log("Entering ABX action with commited changes");
   
   console.log("==========================================");
   console.log("inputs.tags:");
