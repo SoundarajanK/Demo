@@ -1,0 +1,13 @@
+---
+exportVersion: "1"
+exportId: "8a7480be726d65660172781e2afc012e"
+name: "Tag-vSphere-VM-With-Tags-Object"
+runtime: "nodejs"
+entrypoint: "handler"
+timeoutSeconds: 240
+deploymentTimeoutSeconds: 600
+actionType: "SCRIPT"
+provider: "on-prem"
+configuration:
+  const_azure-system_managed_identity: false
+memoryInMB: 300
