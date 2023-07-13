@@ -1,6 +1,6 @@
 formatVersion: 1
 name: cloud-template01
-version: 2.3
+version: 2.4
 inputs: {}
 resources:
   CentOs-New:
@@ -22,4 +22,4 @@ resources:
     properties:
       networkType: existing
       constraints:
-        - tag: 'env:compute'
+        - tag: 'workload:demo'
