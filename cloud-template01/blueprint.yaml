@@ -1,13 +1,13 @@
 formatVersion: 1
 name: cloud-template01
-version: 2.4
+version: 2.5
 inputs: {}
 resources:
   CentOs-New:
     type: Cloud.Machine
     properties:
       constraints:
-        - tag: 'env:compute'
+        - tag: 'workload:demo'
       image: centOS-CloudInit
       flavor: Medium
       customizationSpec: Linux-cust
