@@ -16,7 +16,6 @@ exports.handler = function handler(context, inputs) {
   console.log("tagsJsonObject:");
   console.log(tagsJsonObject);
   console.log("==========================================");
- //This is an updated file.
   
   Object.keys(tagsJsonObject).forEach(key => {
       outputs.tags[key] = tagsJsonObject[key];
