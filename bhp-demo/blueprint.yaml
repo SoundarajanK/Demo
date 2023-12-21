@@ -1,6 +1,6 @@
 formatVersion: 1
 name: cloud-template01
-version: 3
+version: 4
 inputs: {}
 resources:
   CentOs:
